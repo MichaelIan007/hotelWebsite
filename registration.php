@@ -16,14 +16,14 @@ if (isset($_REQUEST['username'])){
 	$username = mysqli_real_escape_string($con,$username); 
 	$email = stripslashes($_REQUEST['email']);
 	$email = mysqli_real_escape_string($con,$email);
-	$password = stripslashes($_REQUEST['password']);
+	$password = stripslashes($_REQUEST['password']);w
 	$password = mysqli_real_escape_string($con,$password);
 	$trn_date = date("Y-m-d H:i:s");
         $query = "INSERT into `users` (username, password, email, trn_date)
 VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
         $result = mysqli_query($con,$query);
         if($result){
-            echo "<div class='form'>
+                echo "<div class='form'>
 <h3>You are registered successfully.</h3>
 <br/>Click here to <a href='login.php'>Login</a></div>";
         }
